@@ -26,19 +26,25 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 58.0, right: 10, left: 10),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Webmaster.Kitchen"),
+        backgroundColor: Colors.deepOrangeAccent,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 58.0, right: 10, left: 10),
 
-      /// In AnimSearchBar widget, the width, textController, onSuffixTap are required properties.
-      /// You have also control over the suffixIcon, prefixIcon, helpText and animationDurationInMilli
-      child: AnimSearchBar(
-        width: 400,
-        textController: textController,
-        onSuffixTap: () {
-          setState(() {
-            textController.clear();
-          });
-        },
+        /// In AnimSearchBar widget, the width, textController, onSuffixTap are required properties.
+        /// You have also control over the suffixIcon, prefixIcon, helpText and animationDurationInMilli
+        child: AnimSearchBar(
+          width: 400,
+          textController: textController,
+          onSuffixTap: () {
+            setState(() {
+              textController.clear();
+            });
+          },
+        ),
       ),
     );
   }
